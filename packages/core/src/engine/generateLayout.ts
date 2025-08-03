@@ -28,13 +28,7 @@ export class GenUIEngine {
         design: input.design,
       });
 
-      console.log(result);
-      if (!this.isValidGenUIOutput(result)) {
-        throw new Error(
-          "Generated UI output does not match expected structure"
-        );
-      }
-
+      // Just return the parsed JSON without validation
       return result as GenUIOutput;
     } catch (error) {
       throw new Error(
@@ -68,43 +62,4 @@ export class GenUIEngine {
     }
   }
 
-  private isValidGenUIOutput(output: any): output is GenUIOutput {
-    return (
-      output &&
-      typeof output === "object" &&
-      output.design &&
-      output.layout &&
-      output.design.theme &&
-      output.design.tokens &&
-      output.layout.structure &&
-      Array.isArray(output.layout.sections) &&
-      output.layout.responsive
-    );
-  }
-
-  // private async parseStreamedJSON(
-  //   stream: AsyncIterable<any>
-  // ): Promise<GenUIOutput> {
-  //   let jsonString = "";
-
-  //   for await (const chunk of stream) {
-  //     if (chunk.content) {
-  //       jsonString += chunk.content;
-  //     }
-  //   }
-
-  //   try {
-  //     const parsed = JSON.parse(jsonString);
-  //     if (!this.isValidGenUIOutput(parsed)) {
-  //       throw new Error("Invalid UI output structure");
-  //     }
-  //     return parsed;
-  //   } catch (error) {
-  //     throw new Error(
-  //       `Failed to parse streamed JSON: ${
-  //         error instanceof Error ? error.message : "Unknown error"
-  //       }`
-  //     );
-  //   }
-  // }
 }

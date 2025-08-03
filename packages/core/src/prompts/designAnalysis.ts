@@ -33,9 +33,20 @@ Provide a detailed design specification as a string that includes:
 - **Layout Strategy**: Grid system, component arrangement, responsive behavior
 - **Content Hierarchy**: Primary, secondary, and tertiary content organization
 - **Interactive Elements**: Buttons, forms, navigation patterns
-- **Component Requirements**: Specific UI components needed
+- **Component Requirements**: Specific UI components needed with sample content
 - **User Flow**: How users will interact with the interface
+- **Content Samples**: Provide minimal, realistic content for each component
 
-Your output should be comprehensive yet concise, focusing on actionable design decisions that will guide the UI generation phase.
+## Content Guidelines:
+- Keep content concise and realistic (e.g., "Learn more" not full paragraphs)
+- Use placeholder text sparingly - prefer real, minimal content
+- For "show more" sections, use subtle design elements:
+  - Text links with underline on hover
+  - Small "+" or chevron icons
+  - Avoid heavy buttons or intrusive elements
+- Limit initial visible content to essential information
+- Progressive disclosure for detailed information
+
+Your output should be comprehensive yet concise, focusing on actionable design decisions that will guide the UI generation phase. Include sample content that demonstrates the design without overwhelming the user.
 
 Design Specification:`;
